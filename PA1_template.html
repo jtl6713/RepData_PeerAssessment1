@@ -148,7 +148,7 @@ activityData &lt;- data.frame(date=activityData$date, weekday=activityData$weekd
 <ul>
 <li>Make a histogram of the total number of steps taken each day</li>
 </ul>
-<pre class="r"><code>png('instructions_fig/plot1.png')
+<pre class="r"><code>png('figure/unnamed-chunk-3-1.png')
 hist(dailySteps$steps, breaks=seq(from=0, to=25000, by=1500), main = paste(&quot;Steps per day&quot;), col=&quot;blue&quot;, xlab=&quot;Step Count&quot;)
 dev.off()</code></pre>
 <pre><code>## png 
@@ -170,7 +170,7 @@ medianSteps &lt;- median(dailySteps$steps)</code></pre>
 </ul>
 <pre class="r"><code># Calculate average steps for each of 5-minute interval during a 24-hour period
 stepsInterval &lt;- aggregate(steps ~ interval, activityData, mean)
-png('instructions_fig/plot2.png')
+png('figure/unnamed-chunk-5-1.png')
 plot(stepsInterval$interval,stepsInterval$steps, type=&quot;l&quot;, xlab=&quot;5 minute interval&quot;, ylab=&quot;Step count&quot;,main=&quot;Average Number of Steps by Interval&quot;)
 dev.off()</code></pre>
 <pre><code>## png 
@@ -223,7 +223,7 @@ head(activityData)</code></pre>
 <ul>
 <li>Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day.</li>
 </ul>
-<pre class="r"><code>png('instructions_fig/plot3.png')
+<pre class="r"><code>png('figure/unnamed-chunk-12-1.png')
 hist(dailySteps$steps, breaks=seq(from=0, to=25000, by=1500), main = paste(&quot;Steps per day (NA's replaced by mean)&quot;), col=&quot;red&quot;, xlab=&quot;Step Count&quot;)
 dev.off()</code></pre>
 <pre><code>## png 
@@ -246,10 +246,11 @@ mean_data &lt;- aggregate(activityData$steps, by=list(activityData$daytype, acti
 # Rename the attributes
 names(mean_data) &lt;- c(&quot;daytype&quot;, &quot;weekday&quot;, &quot;interval&quot;, &quot;mean&quot;)
 
-png('instructions_fig/plot4.png')
+png('figure/unnamed-chunk-14-1.png')
 xyplot(mean ~ interval | daytype, mean_data, 
        type=&quot;l&quot;, layout=c(1,2), lwd=1, 
        main = &quot;Avg steps by interval&quot;, xlab=&quot;Interval&quot;, ylab=&quot;Number of steps&quot;)
+# It appears that during the weekend the steps ramp up earlier in the day.
 dev.off()</code></pre>
 <pre><code>## png 
 ##   2</code></pre>

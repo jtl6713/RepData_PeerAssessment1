@@ -38,7 +38,7 @@ dailySteps <- aggregate(steps ~ date, activityData, sum)
 
 * Make a histogram of the total number of steps taken each day
 ```{r echo=TRUE}
-png('instructions_fig/plot1.png')
+png('figure/unnamed-chunk-3-1.png')
 hist(dailySteps$steps, breaks=seq(from=0, to=25000, by=1500), main = paste("Steps per day"), col="blue", xlab="Step Count")
 dev.off()
 ```
@@ -60,7 +60,7 @@ medianSteps <- median(dailySteps$steps)
 ```{r echo=TRUE}
 # Calculate average steps for each of 5-minute interval during a 24-hour period
 stepsInterval <- aggregate(steps ~ interval, activityData, mean)
-png('instructions_fig/plot2.png')
+png('figure/unnamed-chunk-5-1.png')
 plot(stepsInterval$interval,stepsInterval$steps, type="l", xlab="5 minute interval", ylab="Step count",main="Average Number of Steps by Interval")
 dev.off()
 ```
@@ -108,7 +108,7 @@ head(activityData)
 
 * Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. 
 ```{r echo=TRUE}
-png('instructions_fig/plot3.png')
+png('figure/unnamed-chunk-12-1.png')
 hist(dailySteps$steps, breaks=seq(from=0, to=25000, by=1500), main = paste("Steps per day (NA's replaced by mean)"), col="red", xlab="Step Count")
 dev.off()
 ```
@@ -133,10 +133,11 @@ mean_data <- aggregate(activityData$steps, by=list(activityData$daytype, activit
 # Rename the attributes
 names(mean_data) <- c("daytype", "weekday", "interval", "mean")
 
-png('instructions_fig/plot4.png')
+png('figure/unnamed-chunk-14-1.png')
 xyplot(mean ~ interval | daytype, mean_data, 
        type="l", layout=c(1,2), lwd=1, 
        main = "Avg steps by interval", xlab="Interval", ylab="Number of steps")
-dev.off()
 # It appears that during the weekend the steps ramp up earlier in the day.
+dev.off()
+
 ```
