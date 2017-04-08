@@ -127,7 +127,7 @@ $(document).ready(function () {
 <h3>What is mean total number of steps taken per day?</h3>
 <ul>
 <li><p>Calculate the total number of steps taken per day</p></li>
-<li><p>Make a histogram of the total number of steps taken each day <img src="PA1_template_files/figure-html/Figs/unnamed-chunk-2-1.png" /><!-- --></p></li>
+<li><p>Make a histogram of the total number of steps taken each day <img src="Figures/unnamed-chunk-2-1.png" /><!-- --></p></li>
 <li><p>Calculate and report the mean and median of the total number of steps taken per day</p></li>
 </ul>
 <pre class="r"><code>meanSteps &lt;- mean(dailySteps$steps)
@@ -145,7 +145,7 @@ medianSteps &lt;- median(dailySteps$steps)</code></pre>
 <pre class="r"><code># Calculate average steps for each of 5-minute interval during a 24-hour period
 stepsInterval &lt;- aggregate(steps ~ interval, activityData, mean)
 plot(stepsInterval$interval,stepsInterval$steps, type=&quot;l&quot;, xlab=&quot;5 minute interval&quot;, ylab=&quot;Step count&quot;,main=&quot;Average Number of Steps by Interval&quot;)</code></pre>
-<p><img src="PA1_template_files/figure-html/Figs/unnamed-chunk-4-1.png" /><!-- --></p>
+<p><img src="Figures/unnamed-chunk-4-1.png" /><!-- --></p>
 <ul>
 <li>Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?</li>
 </ul>
@@ -195,7 +195,7 @@ head(activityData)</code></pre>
 <li>Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day.</li>
 </ul>
 <pre class="r"><code>hist(dailySteps$steps, breaks=seq(from=0, to=25000, by=1500), main = paste(&quot;Steps per day (NA&#39;s replaced by mean)&quot;), col=&quot;red&quot;, xlab=&quot;Step Count&quot;)</code></pre>
-<p><img src="PA1_template_files/figure-html/Figs/unnamed-chunk-11-1.png" /><!-- --></p>
+<p><img src="Figures/unnamed-chunk-11-1.png" /><!-- --></p>
 <p>What is the impact of imputing missing data on the estimates of the total daily number of steps?</p>
 <pre class="r"><code>meanSteps &lt;- mean(dailySteps$steps)
 medianSteps &lt;- median(dailySteps$steps)</code></pre>
@@ -217,7 +217,7 @@ names(mean_data) &lt;- c(&quot;daytype&quot;, &quot;weekday&quot;, &quot;interva
 xyplot(mean ~ interval | daytype, mean_data, 
        type=&quot;l&quot;, layout=c(1,2), lwd=1, 
        main = &quot;Avg steps by interval&quot;, xlab=&quot;Interval&quot;, ylab=&quot;Number of steps&quot;)</code></pre>
-<p><img src="PA1_template_files/figure-html/Figs/unnamed-chunk-13-1.png" /><!-- --></p>
+<p><img src="Figures/unnamed-chunk-13-1.png" /><!-- --></p>
 <pre class="r"><code># It appears that during the weekend the steps ramp up earlier in the day.</code></pre>
 </div>
 

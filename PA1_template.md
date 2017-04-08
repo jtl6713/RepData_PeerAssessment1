@@ -13,7 +13,7 @@
 
 
 * Make a histogram of the total number of steps taken each day
-![](PA1_template_files/figure-html/Figs/unnamed-chunk-2-1.png)<!-- -->
+![](Figures/unnamed-chunk-2-1.png)<!-- -->
 
 * Calculate and report the mean and median of the total number of steps taken per day
 
@@ -37,7 +37,7 @@ stepsInterval <- aggregate(steps ~ interval, activityData, mean)
 plot(stepsInterval$interval,stepsInterval$steps, type="l", xlab="5 minute interval", ylab="Step count",main="Average Number of Steps by Interval")
 ```
 
-![](PA1_template_files/figure-html/Figs/unnamed-chunk-4-1.png)<!-- -->
+![](Figures/unnamed-chunk-4-1.png)<!-- -->
 
 * Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -112,7 +112,7 @@ head(activityData)
 hist(dailySteps$steps, breaks=seq(from=0, to=25000, by=1500), main = paste("Steps per day (NA's replaced by mean)"), col="red", xlab="Step Count")
 ```
 
-![](PA1_template_files/figure-html/Figs/unnamed-chunk-11-1.png)<!-- -->
+![](Figures/unnamed-chunk-11-1.png)<!-- -->
 
 What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
@@ -141,7 +141,7 @@ xyplot(mean ~ interval | daytype, mean_data,
        main = "Avg steps by interval", xlab="Interval", ylab="Number of steps")
 ```
 
-![](PA1_template_files/figure-html/Figs/unnamed-chunk-13-1.png)<!-- -->
+![](Figures/unnamed-chunk-13-1.png)<!-- -->
 
 ```r
 # It appears that during the weekend the steps ramp up earlier in the day.
